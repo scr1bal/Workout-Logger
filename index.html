@@ -64,6 +64,8 @@
   .setline .sx{color:var(--faint);font-size:15px;text-align:center}
   .setline input{width:100%;background:none;border:0;color:var(--ink);padding:8px 4px;font-size:19px;text-align:center;font-variant-numeric:tabular-nums}
   .setline input:focus{outline:none;color:var(--blue);caret-color:var(--blue)}
+  .clear-link{background:none;border:0;color:var(--faint);font-size:14px;font-style:italic;padding:0}
+  .clear-link:active{color:var(--blue)}
   .setline input::placeholder{color:var(--faint)}
   .setline .rm{background:none;border:0;color:var(--faint);font-size:20px;line-height:1;padding:4px}
   .addset{background:none;border:0;color:var(--blue);padding:14px 0 4px;font-size:15px;font-style:italic;letter-spacing:.3px}
@@ -144,6 +146,7 @@
     <button data-dur="long">1 hour</button>
   </div>
   <div class="meta-row"><input type="date" id="wdate"><span class="note" id="prefill-note"></span></div>
+  <div class="meta-row" style="margin-top:0"><span></span><button class="clear-link" id="clear-btn">clear all fields</button></div>
   <div id="ex-list"></div>
   <button class="btn" id="save-btn" style="margin-top:16px">Finish &amp; save</button>
   <div class="foot">Dumbbells: enter one dumbbell's weight. Leave weight blank or 0 for a bodyweight set — it logs as BW.</div>
@@ -283,6 +286,12 @@ function setRow(n,p,type){const bw=type==='bw';const wv=p?(p.weight>0?p.weight:'
     <button class="rm" data-rm>×</button></div>`;
 }
 function renumber(rows){[...rows.children].forEach((c,i)=>c.querySelector('.sx').textContent=i+1);}
+$('#ex-list').addEventListener('focusin',e=>{ if(e.target.matches('.w,.r')) e.target.select(); });
+$('#clear-btn').addEventListener('click',()=>{
+  $$('#ex-list .w,#ex-list .r').forEach(inp=>inp.value='');
+  $('#prefill-note').textContent='cleared · starting blank';
+  toast('All fields cleared');
+});
 $('#ex-list').addEventListener('click',e=>{
   if(e.target.matches('[data-add]')){const rows=e.target.previousElementSibling;const d=document.createElement('div');d.innerHTML=setRow(rows.children.length+1,null,e.target.closest('.ex').dataset.type);rows.appendChild(d.firstElementChild);}
   if(e.target.matches('[data-rm]')){const rows=e.target.closest('.rows');if(rows.children.length>1){e.target.closest('.setline').remove();renumber(rows);}}
@@ -408,4 +417,3 @@ if('serviceWorker' in navigator){window.addEventListener('load',function(){navig
 </script>
 </body>
 </html>
-
