@@ -28,30 +28,24 @@
   h1,h2,h3{margin:0;font-weight:400}
   input,button,select,textarea{font-family:inherit;color:inherit}
   .num{font-variant-numeric:tabular-nums}
-  /* header */
   header{position:sticky;top:0;z-index:20;background:var(--bg);padding:calc(env(safe-area-inset-top) + 22px) 24px 16px}
   .brand{display:flex;align-items:baseline;justify-content:space-between}
   .brand h1{font-size:23px;letter-spacing:5px}
   .brand h1 i{font-style:normal;color:var(--blue)}
   .brand .sub{color:var(--faint);font-size:12px;letter-spacing:.5px;font-style:italic;text-align:right;max-width:60%}
-  /* nav — no divider line */
   nav.tabs{position:fixed;bottom:0;left:0;right:0;z-index:40;display:flex;max-width:640px;margin:0 auto;
     background:var(--bg);padding-bottom:env(safe-area-inset-bottom)}
   nav.tabs button{flex:1;background:none;border:0;color:var(--faint);padding:13px 0 15px;font-size:12px;letter-spacing:1px;transition:color .18s}
   nav.tabs button .ic{display:block;font-size:16px;margin-bottom:4px;font-style:normal}
   nav.tabs button.on{color:var(--blue)}
-  /* layout */
   .wrap{padding:0 24px}
   .eyebrow{color:var(--faint);font-size:12px;letter-spacing:2.5px;text-transform:uppercase;margin:32px 0 14px;font-style:italic}
-  /* text-tab selector — active = maroon font, no underline */
-  .seg{display:flex;gap:28px}
+  .seg{display:flex;gap:22px;flex-wrap:wrap}
   .seg button{background:none;border:0;padding:2px 0;color:var(--muted);font-size:19px;letter-spacing:.5px}
   .seg button.on{color:var(--blue)}
-  /* meta */
   .meta-row{display:flex;justify-content:space-between;align-items:center;margin:22px 0 4px}
   .meta-row input[type=date]{background:none;border:0;color:var(--ink);padding:4px 0;font-size:15px}
   .note{color:var(--faint);font-size:14px;font-style:italic}
-  /* exercise — the ONLY separators */
   .ex{padding:22px 0 10px}
   .ex + .ex{border-top:1px solid var(--line)}
   .ex-head{display:flex;justify-content:space-between;align-items:baseline;gap:14px;margin-bottom:14px}
@@ -69,13 +63,11 @@
   .setline input::placeholder{color:var(--faint)}
   .setline .rm{background:none;border:0;color:var(--faint);font-size:20px;line-height:1;padding:4px}
   .addset{background:none;border:0;color:var(--blue);padding:14px 0 4px;font-size:15px;font-style:italic;letter-spacing:.3px}
-  /* actions — maroon text, no fill, no border */
   .btn{display:block;width:100%;background:none;border:0;padding:18px;font-size:18px;letter-spacing:2px;
     text-transform:uppercase;color:var(--blue);transition:opacity .12s}
   .btn:active{opacity:.55}
   .btn.small{padding:12px;font-size:14px;letter-spacing:1.5px}
   .btn2{display:flex;gap:32px;justify-content:center}
-  /* history — session separators kept */
   .hitem{padding:22px 0}
   .hitem + .hitem{border-top:1px solid var(--line)}
   .hitem .top{display:flex;justify-content:space-between;align-items:baseline;cursor:pointer}
@@ -89,12 +81,10 @@
   .hitem .body .row span{text-align:right;font-variant-numeric:tabular-nums;color:var(--faint)}
   .chev{color:var(--faint);font-size:20px;transition:transform .18s}
   .hitem.open .chev{transform:rotate(90deg);color:var(--blue)}
-  /* stats */
   .stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px 20px}
   .stat .v{font-size:42px;letter-spacing:-1px;line-height:1}
   .stat .v b{color:var(--blue);font-weight:400}
   .stat .k{color:var(--muted);font-size:13px;letter-spacing:.5px;margin-top:8px;font-style:italic}
-  /* charts / body */
   .picker{width:100%;background:none;color:var(--blue);border:0;padding:12px 0;font-size:19px;margin-bottom:14px;-webkit-appearance:none;appearance:none}
   .block{margin-bottom:8px}
   .lbl{color:var(--faint);font-size:12px;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:16px;font-style:italic}
@@ -103,14 +93,12 @@
   .legend{display:flex;align-items:center;gap:10px;margin-top:18px;color:var(--faint);font-size:11px;letter-spacing:1.5px;text-transform:uppercase;font-style:italic}
   .legend .bar{flex:1;height:4px;background:linear-gradient(90deg,#c8d0d4,var(--blue))}
   .bcap{display:flex;justify-content:space-around;color:var(--faint);font-size:12px;letter-spacing:2px;text-transform:uppercase;margin-top:8px;font-style:italic}
-  /* profile */
   .field{margin-bottom:26px}
   .field label{display:block;color:var(--muted);font-size:12px;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:8px;font-style:italic}
   .field .inp{display:flex;align-items:baseline;padding:2px 0}
   .field input{flex:1;background:none;border:0;padding:6px 0;font-size:26px;font-variant-numeric:tabular-nums}
   .field input:focus{outline:none;color:var(--blue);caret-color:var(--blue)}
   .field .u{color:var(--faint);font-size:16px;font-style:italic}
-  /* summary sheet */
   .scrim{position:fixed;inset:0;z-index:60;background:rgba(38,42,46,.5);display:none;align-items:flex-end;justify-content:center}
   .scrim.show{display:flex}
   .sheet{width:100%;max-width:640px;background:var(--surface);border-radius:var(--r) var(--r) 0 0;
@@ -137,7 +125,6 @@
   <div class="brand"><h1>IRON<i>·</i>LOG</h1><div class="sub" id="hdr-sub">personal tracker</div></div>
 </header>
 
-<!-- LOG -->
 <section id="tab-workout" class="wrap">
   <div class="eyebrow">Session</div>
   <div class="seg" id="day-seg"></div>
@@ -152,13 +139,11 @@
   <div class="foot">Dumbbells: enter one dumbbell's weight. Leave weight blank or 0 for a bodyweight set — it logs as BW.</div>
 </section>
 
-<!-- HISTORY -->
 <section id="tab-history" class="wrap hide">
   <div class="eyebrow">Your sessions</div>
   <div id="history-list"></div>
 </section>
 
-<!-- INSIGHTS -->
 <section id="tab-insights" class="wrap hide">
   <div class="eyebrow">Overview</div>
   <div class="stat-grid" id="stat-grid"></div>
@@ -176,7 +161,6 @@
   <div class="foot">CSV drops straight into Google Sheets. JSON is your full backup — it's the only copy.</div>
 </section>
 
-<!-- PROFILE -->
 <section id="tab-profile" class="wrap hide">
   <div class="eyebrow">Your stats</div>
   <div class="field"><label>Height</label><div class="inp"><input id="p-height" inputmode="numeric" placeholder="188"><span class="u">cm</span></div></div>
@@ -187,7 +171,7 @@
   <div class="eyebrow">30-day muscle balance</div>
   <div class="block"><div class="lbl">Where your volume is going</div><div id="heat-month"></div>
     <div class="legend"><span>Undertrained</span><div class="bar"></div><span>Maxed</span></div></div>
-  <div class="foot">Calorie burn is a MET-based estimate (weights ≈ 5.5 MET), scaled by your weight and session length. A guide, not a gospel.</div>
+  <div class="foot">Calorie burn is a MET-based estimate (weights ≈ 5.5 MET, cardio ≈ 7 MET), scaled by your weight and session length. A guide, not a gospel.</div>
 </section>
 
 <nav class="tabs">
@@ -209,28 +193,34 @@ const KEY='ironlog_v2';
 let DB={logs:[],profile:{height:null,weight:null}};
 
 const T={
-  push:{label:'Push',full:'Push · Chest / Shoulders / Triceps',
+  push:{label:'Push',
     short:[['Dumbbell Flat Bench Press','db',3],['Dumbbell Overhead Press (Seated)','db',3],['Dumbbell Lateral Raise','db',3],['Triceps Pushdown (V-bar)','cb',3]],
-    long:[['Dumbbell Flat Bench Press','db',4],['Dumbbell Incline Bench Press','db',3],['Dumbbell Overhead Press (Seated)','db',3],['Pec Deck Fly','mc',3],['Dumbbell Lateral Raise','db',3],['Cable Chest Fly (High)','cb',3],['Triceps Pushdown (V-bar)','cb',3],['Dumbbell Overhead Triceps Extension','db',2]]},
-  pull:{label:'Pull',full:'Pull · Back / Biceps',
-    short:[['Underhand Lat Pulldown','mc',3],['Seated Cable Row','cb',3],['Cable Face Pull','cb',2],['Dumbbell Hammer Curls','db',3]],
-    long:[['Underhand Lat Pulldown','mc',3],['One-Arm Dumbbell Row','db',3],['Seated Cable Row','cb',3],['Lat Pulldown (Wide Grip)','mc',3],['Dumbbell Pullover','db',3],['Cable Face Pull','cb',3],['Dumbbell Hammer Curls','db',3],['Dumbbell Bicep Curls','db',3]]},
-  legs:{label:'Legs',full:'Legs · Quads / Hams / Lower Back / Core',
-    short:[['Dumbbell Goblet Squat','db',3],['Leg Extension','mc',3],['Lying Leg Curl','mc',3],['Back Extension','mc',2],['Dumbbell Standing Calf Raise','db',2],['Crunches','bw',3]],
-    long:[['Dumbbell Goblet Squat','db',4],['Leg Extension','mc',3],['Lying Leg Curl','mc',3],['Back Extension','mc',3],['Dumbbell Standing Calf Raise','db',4],['Crunches','bw',4]]}
+    long:[['Dumbbell Flat Bench Press','db',3],['Dumbbell Overhead Press (Seated)','db',3],['Pec Deck Fly','mc',3],['Cable Chest Fly (High)','cb',3],['Dumbbell Lateral Raise','db',3],['Triceps Pushdown (V-bar)','cb',3],['Dumbbell Overhead Triceps Extension','db',3]]},
+  pull:{label:'Pull',
+    short:[['Dumbbell Row','db',3],['Underhand Lat Pulldown','mc',3],['Cable Face Pull','cb',3],['Dumbbell Hammer Curls','db',3]],
+    long:[['Romanian Deadlift','db',3],['Dumbbell Row','db',3],['Underhand Lat Pulldown','mc',3],['Lat Pulldown (Wide Grip)','mc',3],['Dumbbell Pullover','db',3],['Cable Face Pull','cb',3],['Dumbbell Hammer Curls','db',3],['EZ-Bar Bicep Curls','bb',3]]},
+  legs:{label:'Legs',
+    short:[['Dumbbell Goblet Squat','db',3],['Bulgarian Split Squat','db',3],['Lying Leg Curl','mc',3],['Leg Extension','mc',3]],
+    long:[['Dumbbell Goblet Squat','db',3],['Bulgarian Split Squat','db',3],['Lying Leg Curl','mc',3],['Leg Extension','mc',3],['Hip Abduction Machine','mc',3],['Dumbbell Standing Calf Raise','db',3]]},
+  core:{label:'Core',
+    short:[['Cable Woodchoppers','cb',3],['Leg Raises','bw',3],['Weighted Crunches','db',3],['Mountain Climbers','bw',3],['Cardio','cd',1]],
+    long:[['Cable Woodchoppers','cb',3],['Leg Raises','bw',3],['Weighted Crunches','db',3],['Crunches','bw',3],['Mountain Climbers','bw',3],['Cardio','cd',1]]}
 };
-const TAGTXT={db:'DB · per hand',mc:'Machine',cb:'Cable',bw:'Bodyweight'};
+const TAGTXT={db:'DB · per hand',bb:'Barbell',mc:'Machine',cb:'Cable',bw:'Bodyweight',cd:'Cardio'};
 
 const EX={
-  'Dumbbell Flat Bench Press':{p:['chest'],s:['triceps','delts']},'Dumbbell Incline Bench Press':{p:['chest'],s:['delts','triceps']},
+  'Dumbbell Flat Bench Press':{p:['chest'],s:['triceps','delts']},
   'Dumbbell Overhead Press (Seated)':{p:['delts'],s:['triceps']},'Pec Deck Fly':{p:['chest'],s:[]},'Dumbbell Lateral Raise':{p:['delts'],s:[]},
   'Cable Chest Fly (High)':{p:['chest'],s:[]},'Triceps Pushdown (V-bar)':{p:['triceps'],s:[]},'Dumbbell Overhead Triceps Extension':{p:['triceps'],s:[]},
-  'Underhand Lat Pulldown':{p:['lats'],s:['biceps']},'One-Arm Dumbbell Row':{p:['lats'],s:['traps','biceps']},
-  'Seated Cable Row':{p:['lats','traps'],s:['biceps','lowerback']},'Lat Pulldown (Wide Grip)':{p:['lats'],s:['biceps']},
+  'Underhand Lat Pulldown':{p:['lats'],s:['biceps']},'Dumbbell Row':{p:['lats'],s:['traps','biceps']},
+  'Lat Pulldown (Wide Grip)':{p:['lats'],s:['biceps']},'Romanian Deadlift':{p:['hamstrings','glutes'],s:['lowerback']},
   'Dumbbell Pullover':{p:['lats'],s:['chest']},'Cable Face Pull':{p:['delts','traps'],s:[]},
-  'Dumbbell Hammer Curls':{p:['biceps'],s:['forearms']},'Dumbbell Bicep Curls':{p:['biceps'],s:[]},
-  'Dumbbell Goblet Squat':{p:['quads','glutes'],s:['lowerback']},'Leg Extension':{p:['quads'],s:[]},'Lying Leg Curl':{p:['hamstrings'],s:[]},
-  'Back Extension':{p:['lowerback'],s:['glutes','hamstrings']},'Dumbbell Standing Calf Raise':{p:['calves'],s:[]},'Crunches':{p:['abs'],s:[]}
+  'Dumbbell Hammer Curls':{p:['biceps'],s:['forearms']},'EZ-Bar Bicep Curls':{p:['biceps'],s:[]},
+  'Dumbbell Goblet Squat':{p:['quads','glutes'],s:['lowerback']},'Bulgarian Split Squat':{p:['quads','glutes'],s:['hamstrings']},
+  'Leg Extension':{p:['quads'],s:[]},'Lying Leg Curl':{p:['hamstrings'],s:[]},'Hip Abduction Machine':{p:['glutes'],s:[]},
+  'Back Extension':{p:['lowerback'],s:['glutes','hamstrings']},'Dumbbell Standing Calf Raise':{p:['calves'],s:[]},
+  'Crunches':{p:['abs'],s:[]},'Weighted Crunches':{p:['abs'],s:[]},'Leg Raises':{p:['abs'],s:[]},
+  'Cable Woodchoppers':{p:['abs'],s:['lowerback']},'Mountain Climbers':{p:['abs'],s:['quads']}
 };
 const GRP={chest:'Chest',delts:'Shoulders',triceps:'Triceps',biceps:'Biceps',forearms:'Forearms',abs:'Core',lats:'Back',traps:'Traps',lowerback:'Lower Back',glutes:'Glutes',quads:'Quads',hamstrings:'Hamstrings',calves:'Calves'};
 
@@ -264,7 +254,7 @@ function bodyHeatmap(scores){
 
 function renderDaySeg(){$('#day-seg').innerHTML=Object.keys(T).map(k=>`<button data-day="${k}" class="${k===curDay?'on':''}">${T[k].label}</button>`).join('');}
 function renderWorkout(){
-  $('#hdr-sub').textContent=T[curDay].full;
+  $('#hdr-sub').textContent=T[curDay].label;
   $$('#dur-seg button').forEach(b=>b.classList.toggle('on',b.dataset.dur===curDur));
   $$('#day-seg button').forEach(b=>b.classList.toggle('on',b.dataset.day===curDay));
   if(!$('#wdate').value)$('#wdate').value=todayISO();
@@ -274,12 +264,21 @@ function renderWorkout(){
   T[curDay][curDur].forEach(ex=>{const[name,type,sets]=ex;const pv=prev&&prev.exercises.find(x=>x.name===name);
     const b=document.createElement('div');b.className='ex';b.dataset.name=name;b.dataset.type=type;
     let rows='';for(let i=0;i<sets;i++)rows+=setRow(i+1,pv&&pv.sets[i]?pv.sets[i]:null,type);
-    b.innerHTML=`<div class="ex-head"><h3>${name}</h3><span class="tag">${TAGTXT[type]}</span></div>
-      <div class="colhead"><span>#</span><span>${type==='bw'?'Load':'Weight'}</span><span>Reps</span><span></span></div>
+    const wLabel=type==='bw'?'Load':type==='cd'?'Duration (min)':'Weight';
+    const rLabel=type==='cd'?'':'Reps';
+    const muscleLabel=EX[name]?[...EX[name].p,...EX[name].s].map(m=>GRP[m]).join(' / '):TAGTXT[type];
+    b.innerHTML=`<div class="ex-head"><h3>${name}</h3><span class="tag">${muscleLabel}</span></div>
+      <div class="colhead"><span>#</span><span>${wLabel}</span><span>${rLabel}</span><span></span></div>
       <div class="rows">${rows}</div><button class="addset" data-add>+ add set</button>`;
     list.appendChild(b);});
 }
-function setRow(n,p,type){const bw=type==='bw';const wv=p?(p.weight>0?p.weight:''):'';
+function setRow(n,p,type){const bw=type==='bw';const cd=type==='cd';const wv=p?(p.weight>0?p.weight:''):'';
+  if(cd){
+    return`<div class="setline"><span class="sx">${n}</span>
+      <input class="w" inputmode="decimal" placeholder="min" value="${wv}">
+      <span></span>
+      <button class="rm" data-rm>×</button></div>`;
+  }
   return`<div class="setline"><span class="sx">${n}</span>
     <input class="w" inputmode="decimal" placeholder="${bw?'BW':'0'}" value="${wv}">
     <input class="r" inputmode="numeric" placeholder="0" value="${p&&p.reps?p.reps:''}">
@@ -299,7 +298,8 @@ $('#ex-list').addEventListener('click',e=>{
 async function saveWorkout(){
   const date=$('#wdate').value||todayISO();const exercises=[];
   $$('#ex-list .ex').forEach(b=>{const sets=[];
-    b.querySelectorAll('.setline').forEach(sl=>{const w=sl.querySelector('.w').value.trim(),r=sl.querySelector('.r').value.trim();
+    b.querySelectorAll('.setline').forEach(sl=>{const wEl=sl.querySelector('.w'),rEl=sl.querySelector('.r');
+      const w=wEl?wEl.value.trim():'',r=rEl?rEl.value.trim():'';
       if(w!==''||r!==''){sets.push({weight:w===''?0:parseFloat(w)||0,reps:r===''?0:parseInt(r)||0});}});
     if(sets.length)exercises.push({name:b.dataset.name,type:b.dataset.type,sets});});
   if(!exercises.length){toast('Log at least one set');return;}
@@ -311,7 +311,7 @@ $('#save-btn').addEventListener('click',saveWorkout);
 
 function showSummary(log){
   const kcal=calories(log.variant);const sc=sessionScores(log);
-  const groups=[...new Set(log.exercises.flatMap(e=>EX[e.name].p.map(m=>GRP[m])))];
+  const groups=[...new Set(log.exercises.flatMap(e=>(EX[e.name]?EX[e.name].p:[]).map(m=>GRP[m])))];
   const sets=log.exercises.reduce((a,e)=>a+e.sets.length,0);
   $('#sheet').innerHTML=`<h2>${T[log.day].label} logged</h2>
     <div class="note" style="margin-top:6px">${log.exercises.length} exercises · ${sets} sets</div>
@@ -329,7 +329,7 @@ function renderHistory(){
   el.innerHTML=[...DB.logs].reverse().map(log=>{
     const sets=log.exercises.reduce((a,e)=>a+e.sets.length,0);const kcal=calories(log.variant);
     const body=log.exercises.map(e=>{const best=e.sets.reduce((m,s)=>Math.max(m,epley(s.weight,s.reps)),0);
-      const summ=e.sets.map(s=>`${s.weight>0?s.weight:'BW'}×${s.reps}`).join('  ·  ');
+      const summ=e.type==='cd'?e.sets.map(s=>`${s.weight||0} min`).join('  ·  '):e.sets.map(s=>`${s.weight>0?s.weight:'BW'}×${s.reps}`).join('  ·  ');
       return`<div class="row"><b>${e.name}</b><span>${summ}${best?` | e1RM ${best}`:''}</span></div>`;}).join('');
     return`<div class="hitem" data-id="${log.id}"><div class="top" data-toggle>
       <div><div class="d">${T[log.day].label} · ${log.variant==='short'?'30m':'1h'}${kcal!=null?`<span class="kcal">${kcal} kcal</span>`:''}</div>
@@ -343,7 +343,7 @@ $('#history-list').addEventListener('click',async e=>{
   if(e.target.closest('[data-toggle]'))item.classList.toggle('open');
 });
 
-function allNames(){const s=new Set();DB.logs.forEach(l=>l.exercises.forEach(e=>s.add(e.name)));return[...s].sort();}
+function allNames(){const s=new Set();DB.logs.forEach(l=>l.exercises.forEach(e=>{if(e.type!=='cd')s.add(e.name);}));return[...s].sort();}
 function seriesFor(n){const p=[];DB.logs.forEach(l=>{const ex=l.exercises.find(e=>e.name===n);if(!ex)return;p.push({e1rm:ex.sets.reduce((m,s)=>Math.max(m,epley(s.weight,s.reps)),0),vol:ex.sets.reduce((a,s)=>a+s.weight*s.reps,0)});});return p;}
 function renderInsights(){
   const total=DB.logs.length,wk=new Date(Date.now()-6*864e5).toISOString().slice(0,10);
